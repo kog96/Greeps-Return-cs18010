@@ -26,7 +26,7 @@ public class MyGreep extends Greep
         }
         else if(getTomatoes() != null) {            
             TomatoPile tomatoes = getTomatoes(); 
-            if(!blockAtPile(tomatoes)) {
+            if(!blockPile(tomatoes)) {
                 // Not blocking so lets go towards the centre of the pile
                 turnTowards(tomatoes.getX(), tomatoes.getY());
                 move();
@@ -79,7 +79,7 @@ public class MyGreep extends Greep
         move();
     }
    
-    private void bringTomatoHome() 
+    private void bringTomato() 
     {
         if(atShip()) {
             dropTomato();
@@ -91,11 +91,11 @@ public class MyGreep extends Greep
     }
     
     
-    private boolean blockAtPile(TomatoPile tomatoes) 
+    private boolean blockPile(TomatoPile tomatoes) 
     {
         // Are we at the centre of the pile of tomatoes?  
-        boolean atPileCentre = tomatoes != null && distanceTo(tomatoes.getX(), tomatoes.getY()) < 4;
-        if(atPileCentre && getFriend() == null ) {
+        boolean atPile = tomatoes != null && distanceTo(tomatoes.getX(), tomatoes.getY()) < 4;
+        if(atPile && getFriend() == null ) {
             // No friends at this pile, so we might as well block
             block(); 
             return true;
