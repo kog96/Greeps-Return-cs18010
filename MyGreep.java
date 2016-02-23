@@ -47,7 +47,7 @@ public class MyGreep extends Greep
             turnTowards(getMemory(1), getMemory(2));
             move();
         }
-        else if (numberOfOpponents(false) > 1) {
+        else if (numberOfOpponents(false) > 2) {
             // Can we see four or more opponents?
             kablam();            
         } 
