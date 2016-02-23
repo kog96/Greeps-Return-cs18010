@@ -1,7 +1,10 @@
 import greenfoot.*;  
 import java.util.List;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 public class MyGreep extends Greep
 {
    
@@ -14,11 +17,17 @@ public class MyGreep extends Greep
         super(ship);
     }
     
+<<<<<<< HEAD
  
     public void act()
     {
         super.act();     
 
+=======
+    public void act()
+    {
+        super.act();
+>>>>>>> origin/master
         // Before moving, lets check for food.
         checkFood();
             
@@ -79,7 +88,11 @@ public class MyGreep extends Greep
         
         move();
     }
+<<<<<<< HEAD
     
+=======
+   
+>>>>>>> origin/master
     private void bringTomato() 
     {
         if(atShip()) {
@@ -92,12 +105,15 @@ public class MyGreep extends Greep
     }
     
     
+<<<<<<< HEAD
      
+=======
+>>>>>>> origin/master
     private boolean blockPile(TomatoPile tomatoes) 
     {
         // Are we at the centre of the pile of tomatoes?  
-        boolean atPileCentre = tomatoes != null && distanceTo(tomatoes.getX(), tomatoes.getY()) < 4;
-        if(atPileCentre && getFriend() == null ) {
+        boolean atPile = tomatoes != null && distanceTo(tomatoes.getX(), tomatoes.getY()) < 4;
+        if(atPile && getFriend() == null ) {
             // No friends at this pile, so we might as well block
             block(); 
             return true;
@@ -115,11 +131,9 @@ public class MyGreep extends Greep
         return (int) Math.sqrt(deltaX * deltaX + deltaY * deltaY);
     }
     
-    /**
-     * This method specifies the name of the author (for display on the result board).
-     */
     public String getName()
     {
         return "Kostas";
     }    
 }
+ 
