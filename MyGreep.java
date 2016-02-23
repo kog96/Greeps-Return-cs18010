@@ -1,24 +1,5 @@
 import java.util.List;
 
-/**
- * A Greep is an alien creature that likes to collect tomatoes.
- * 
- * This is a my greep that makes use of most of the functionality in Greep,
- * and it is the default opponent that you will have when competing in the 
- * Greeps competition. 
- * 
- * This greep uses the memory to remember where it has seen tomatoes, and will 
- * go back to get more. Also, if they hit water, they turn immediately and try 
- * a different direction.
- * 
- * If the greep is waiting alone at a pile of tomatoes it will block so opponents 
- * can't get to the pile.
- * 
- * Finally, if the greep can see multiple opponent greeps, it will let
- * off a stink bomb.
- * 
- * This greep does not communicate with other greeps or the ship
- */
 public class MyGreep extends Greep
 {
     // Remember: you cannot extend the Greep's memory. So:
@@ -34,13 +15,9 @@ public class MyGreep extends Greep
         super(ship);
     }
     
-    /**
-     * Do what a greep's gotta do.
-     */
     public void act()
     {
-        super.act();   // do not delete! leave as first statement in act().        
-
+        super.act();
         // Before moving, lets check for food.
         checkFood();
             
@@ -92,9 +69,6 @@ public class MyGreep extends Greep
         }
     }
     
-    /** 
-     * Move forward, with a slight chance of turning randomly
-     */
     private void randomWalk()
     {
         // there's a 3% chance that we randomly turn a little off course
@@ -104,10 +78,7 @@ public class MyGreep extends Greep
         
         move();
     }
-    
-    /**
-     * Bring a tomato to our ship. Drop it if we are at the ship.
-     */
+   
     private void bringTomatoHome() 
     {
         if(atShip()) {
@@ -119,11 +90,7 @@ public class MyGreep extends Greep
         }
     }
     
-    /**
-     * If we are at a tomato pile and none of our friends are blocking, we will block.
-     * 
-     * @return True if we are blocking, false if not.
-     */
+    
     private boolean blockAtPile(TomatoPile tomatoes) 
     {
         // Are we at the centre of the pile of tomatoes?  
@@ -146,9 +113,6 @@ public class MyGreep extends Greep
         return (int) Math.sqrt(deltaX * deltaX + deltaY * deltaY);
     }
     
-    /**
-     * This method specifies the name of the author (for display on the result board).
-     */
     public String getName()
     {
         return "Kostas";
